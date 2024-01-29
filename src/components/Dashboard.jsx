@@ -11,6 +11,7 @@ const Dashboard = () => {
     date: "",
     time: "",
     price: "",
+    video_url: "",
   });
 
   const apiEndpoint = "https://webinar-backend.vercel.app/data";
@@ -24,6 +25,7 @@ const Dashboard = () => {
       "teacher_img",
       "teacher_name",
       "time",
+      "video_url",
     ];
 
     if (requiredFields.some((field) => newWebinar[field] === "")) {
@@ -54,6 +56,7 @@ const Dashboard = () => {
           date: "",
           time: "",
           price: "",
+          video_url: "",
         });
       } else {
         console.error(
@@ -105,6 +108,17 @@ const Dashboard = () => {
           placeholder="Enter Dp img Url"
           className="border rounded-lg w-full h-fit px-2 md:py-2 py-1 mt-2"
         />
+
+        <input
+          type="text"
+          value={newWebinar.video_url}
+          onChange={(e) =>
+            setNewWebinar({ ...newWebinar, video_url: e.target.value })
+          }
+          placeholder="Enter Video Url"
+          className="border rounded-lg w-full h-fit px-2 md:py-2 py-1 mt-2"
+        />
+
         <input
           type="text"
           value={newWebinar.description}

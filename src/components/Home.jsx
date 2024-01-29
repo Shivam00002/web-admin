@@ -27,7 +27,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchWebinars();
-  }, [webinars]);
+  }, []);
 
   console.log(webinars);
 
