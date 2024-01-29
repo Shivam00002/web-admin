@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import toast from "react-hot-toast";
 export const EventCard = ({
   id,
   title,
@@ -13,14 +13,28 @@ export const EventCard = ({
 
   const handleDelete = async () => {
     try {
-      await fetch(`https://webinar-backend.vercel.app/data/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
       setIsDeleted(true);
+      toast.promise(
+        fetch(`https://webinar-backend.vercel.app/data/${id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then(() => {
+            toast.success("Card Deleted!");
+          })
+          .catch((error) => {
+            console.error("Error deleting card:", error);
+            setIsDeleted(false);
+            toast.error("Error deleting card");
+          }),
+        {
+          loading: "Deleting...",
+          success: "Card Deleted!",
+          error: "Error deleting card",
+        }
+      );
     } catch (error) {
       console.error("Error deleting card:", error);
     }
@@ -29,7 +43,6 @@ export const EventCard = ({
   if (isDeleted) {
     return null;
   }
-
   return (
     <div className="mt-2 md:mt-10">
       <div className="md:w-[380px] mx-auto w-full md:h-fit shadow-lg pb-5 px-2 md:px-0 border">

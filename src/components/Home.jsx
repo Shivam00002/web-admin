@@ -27,7 +27,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchWebinars();
-  }, []);
+  }, [webinars]);
 
   console.log(webinars);
 
@@ -45,13 +45,13 @@ const Home = () => {
             return (
               <EventCard
                 key={index}
-                title={webinars.title}
-                teacher={webinars.teacher_name}
-                time={webinars.time}
-                date={webinars.date}
-                price={webinars.price}
-                imgurl={webinars.teacher_img}
-                id={webinars._id}
+                title={el.title}
+                teacher={el.teacher_name}
+                time={el.time}
+                date={el.date}
+                price={el.price}
+                imgurl={el.teacher_img}
+                id={el._id}
               />
             );
           })}
