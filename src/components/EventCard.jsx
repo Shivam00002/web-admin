@@ -15,7 +15,8 @@ export const EventCard = ({
     try {
       setIsDeleted(true);
       toast.promise(
-        fetch(`https://webinar-backend.vercel.app/data/${id}`, {
+       
+ fetch(`https://webinar-backend.vercel.app/data/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
