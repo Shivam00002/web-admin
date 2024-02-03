@@ -14,6 +14,27 @@ const Dashboard = () => {
     video_url: "",
   });
 
+  const [selectedFile1, setSelectedFile1] = useState(null);
+
+  const handleFileChange1 = (event) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setSelectedFile1(event.target.files[0]);
+    }
+  };
+
+  console.log("File", selectedFile1);
+
+  // const formData = new FormData();
+  // if (selectedFile1) {
+  //   formData.append("image", selectedFile1);
+  //   formData.append("student_name", data.student_name);
+  //   formData.append("date_of_birth", data.date_of_birth);
+  //   formData.append("father_name", data.father_name);
+  //   formData.append("mother_name", data);
+  // } else {
+  //   console.log("empty image");
+  // }
+
   const apiEndpoint = "https://webinar-backend.vercel.app/data";
 
   const handleAddCard = async () => {
@@ -22,7 +43,7 @@ const Dashboard = () => {
       "description",
       "date",
       "price",
-      "teacher_img",
+      //  "teacher_img",
       "teacher_name",
       "time",
       "video_url",
@@ -100,13 +121,11 @@ const Dashboard = () => {
         />
 
         <input
-          type="text"
-          value={newWebinar.teacher_img}
-          onChange={(e) =>
-            setNewWebinar({ ...newWebinar, teacher_img: e.target.value })
-          }
-          placeholder="Enter Dp img Url"
-          className="border rounded-lg w-full h-fit px-2 md:py-2 py-1 mt-2"
+          type="file"
+          name="image"
+          onChange={handleFileChange1}
+          className="border rounded-lg w-full cursor-pointer h-fit px-2 md:py-2 py-1 mt-2"
+          multiple
         />
 
         <input
