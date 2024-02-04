@@ -100,6 +100,7 @@ const Dashboard = () => {
       </h1>
 
       <div className="shadow-lg md:max-w-[500px] w-full h-fit px-4 py-4 border rounded-lg mx-auto">
+      <p className="text-[red]"><a href="https://webinar-ten.vercel.app/">Go Back</a></p>
         <input
           type="text"
           value={newWebinar.title}
