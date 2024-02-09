@@ -28,6 +28,7 @@ export const EventCard = ({
             console.error("Error deleting card:", error);
             setIsDeleted(false);
             toast.error("Error deleting card");
+
           }),
         {
           loading: "Deleting...",
