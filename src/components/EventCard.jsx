@@ -21,6 +21,7 @@ export const EventCard = ({
             "Content-Type": "application/json",
           },
         })
+
           .then(() => {
             toast.success("Card Deleted!");
           })
