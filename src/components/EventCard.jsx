@@ -12,6 +12,7 @@ export const EventCard = ({
   const [isDeleted, setIsDeleted] = useState(false);
 
 
+
   const handleDelete = async () => {
     try {
       setIsDeleted(true);
