@@ -52,6 +52,7 @@ export const EventCard = ({
         <div className="w-full h-fit bg-[#FFF3EB] py-4">
           <div className="flex items-center gap-10 w-full px-5 md:px-10 mt-2">
             <div className="w-[50%] h-fit">
+
               <h2 className="font-bold leading-6 text-[20px]">{title}</h2>
               <h2 className="font-bold leading-6 text-[20px] text-[#000000] whitespace-nowrap py-1">
                 With Top Expert
