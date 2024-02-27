@@ -30,7 +30,6 @@ export const EventCard = ({
             setIsDeleted(false);
             toast.error("Error deleting card");
 
-
           }),
         {
           loading: "Deleting...",
