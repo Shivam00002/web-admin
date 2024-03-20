@@ -23,6 +23,7 @@ export const EventCard = ({
         })
 
 
+
           .then(() => {
             toast.success("Card Deleted!");
           })
