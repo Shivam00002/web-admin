@@ -13,6 +13,7 @@ export const EventCard = ({
 
   const handleDelete = async () => {
 
+
     try {
       setIsDeleted(true);
       toast.promise(
