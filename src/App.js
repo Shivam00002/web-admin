@@ -7,6 +7,7 @@ function App() {
   return (
     <>
 
+
       <Home />
       <Toaster toastOptions={{ position: 'top-center', style: { fontSize: "20px" } }} />
     </>
