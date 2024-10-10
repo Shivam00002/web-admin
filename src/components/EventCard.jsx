@@ -16,6 +16,7 @@ export const EventCard = ({
 
 
 
+
     try {
       setIsDeleted(true);
       toast.promise(
